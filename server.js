@@ -132,3 +132,53 @@ function updateOperation(updated, table) {
     })
   );
 }
+
+app.get("/api/extra-info", async (req, res) => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // get query params
+  const { id } = req.query;
+  try {
+    const extraInfo = await db.query(
+      `SELECT jobTitle, yearsExperience, yearsWithCompany, age, gender, additionalInfo  FROM resource_details WHERE resourceId in (?)`,
+      id
+    );
+
+    if (extraInfo[0].length === 0) {
+      return res.send(`
+        <div>No extra info for this resource</div>
+    `);
+    }
+
+    // return html div string
+    const extraInfoObj = extraInfo[0][0];
+    const {
+      jobTitle,
+      yearsExperience,
+      yearsWithCompany,
+      age,
+      gender,
+      additionalInfo,
+    } = extraInfoObj;
+    res.send(
+      sanitizeHtml(`
+    <div class="extraInfo">
+      <h3>Extra Info</h3>
+      <ul>
+        <li><b>Job Title</b>: ${jobTitle}</li>
+        <li><b>Years Experience:</b> ${yearsExperience}</li>
+        <li><b>Years With Company:</b> ${yearsWithCompany}</li>
+        <li><b>Age:</b> ${age}</li>
+        <li><b>Gender:</b> ${gender}</li>
+        <li><b>Additional Info:</b> ${additionalInfo}</li>
+      </ul>
+    </div>
+    `)
+    );
+  } catch (error) {
+    console.error({ error });
+    res.send({
+      success: false,
+      message: "There was an getting the extra info for the resource.",
+    });
+  }
+});
