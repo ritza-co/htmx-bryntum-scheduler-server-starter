@@ -1,6 +1,8 @@
 import cors from "cors";
 import express from "express";
+import sanitizeHtml from "sanitize-html";
 import { db } from "./utils/dbConnect.js";
+
 const app = express();
 
 const port = process.env.PORT || 1338;
@@ -14,11 +16,9 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-
 app.listen(port, () => {
   console.log(`Started on localhost: ${port}`);
 });
-
 
 app.get("/api/load", async (req, res) => {
   try {
