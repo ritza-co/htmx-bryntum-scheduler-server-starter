@@ -96,7 +96,7 @@ function createOperation(added, table) {
       // insert record
       const [result] = await db.query("INSERT INTO ?? set ?", [
         table,
-        table === "bryntum_scheduler_resources"
+        table === "resources"
           ? data
           : {
               ...data,
@@ -121,7 +121,7 @@ function updateOperation(updated, table) {
     updated.map(({ id, exceptionDates, ...data }) => {
       return db.query("UPDATE ?? set ? where id = ?", [
         table,
-        table === "bryntum_scheduler_resources"
+        table === "resources"
           ? data
           : {
               ...data,
