@@ -1,4 +1,4 @@
-# Using htmx with Bryntum Scheduler: Back end
+# Using htmx with Bryntum Scheduler: Backend
 
 Install the dependencies by running the following command:
 
@@ -27,9 +27,11 @@ FRONTEND_URL=http://localhost:5173
 
 Don’t forget to add the root password for your MySQL server.
 
-## Setup a MySQL database locally
+## Set up a MySQL database locally
 
-We’ll install MySQL Server and MySQL Workbench. MySQL Workbench is a MySQL GUI that we’ll use to create a database with tables for the Scheduler data and to run queries. Download MySQL Server and MySQL Workbench from the MySQL community downloads page. If you’re using Windows, you can use the MySQL Installer to download the MySQL products. Use the default configurations when configuring MySQL Server and Workbench. Make sure that you configure the MySQL Server to start at system startup for your convenience.
+We’ll install MySQL Server and MySQL Workbench. MySQL Workbench is a MySQL GUI that we’ll use to create a database with tables for the Bryntum Scheduler data and to run queries. Download MySQL Server and MySQL Workbench from the MySQL community downloads page. If you’re using Windows, you can use the MySQL Installer to download the MySQL products. 
+
+Use the default configurations when configuring MySQL Server and Workbench. Make sure that you configure the MySQL Server to start at system startup for your convenience.
 
 Open the MySQL Workbench desktop application. Open the local instance of the MySQL Server that you configured.
 
@@ -37,7 +39,7 @@ We’ll write our MySQL queries in the query tab and execute the queries by pres
 
 ### Create a MySQL database for the Bryntum Scheduler data: Adding tables and example data
 
-Let’s run some MySQL queries in MySQL Workbench to create, use, and populate a database for our Bryntum Scheduler data. Execute the following query to create a database called bryntum_scheduler:
+Let’s run some MySQL queries in MySQL Workbench to create, use, and populate a database for our Bryntum Scheduler data. Execute the following query to create a database called `bryntum_scheduler`:
 
 
 ```sql
