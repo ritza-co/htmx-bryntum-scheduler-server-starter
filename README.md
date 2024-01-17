@@ -19,7 +19,7 @@ Now create a `.env` file in the root folder and add the following lines for conn
 ```
 HOST=localhost
 PORT=1338
-USER=root
+MYSQL_USER=root
 PASSWORD=
 DATABASE=bryntum_scheduler
 FRONTEND_URL=http://localhost:5173
@@ -43,7 +43,7 @@ Let’s run some MySQL queries in MySQL Workbench to create, use, and populate a
 
 
 ```sql
-CREATE DATABASE bryntum_scheduler
+CREATE DATABASE bryntum_scheduler;
 ```
 
 Run the following query so that we set our newly created database for use:
