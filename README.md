@@ -19,7 +19,7 @@ Now create a `.env` file in the root folder and add the following lines for conn
 ```
 HOST=localhost
 PORT=1338
-USER=root
+MYSQL_USER=root
 PASSWORD=
 DATABASE=bryntum_scheduler
 FRONTEND_URL=http://localhost:5173
@@ -43,7 +43,7 @@ Let’s run some MySQL queries in MySQL Workbench to create, use, and populate a
 
 
 ```sql
-CREATE DATABASE bryntum_scheduler
+CREATE DATABASE bryntum_scheduler;
 ```
 
 Run the following query so that we set our newly created database for use:
@@ -168,3 +168,5 @@ Add some example resource details data to the table:
 ```sql
 INSERT INTO resource_details (resourceId, jobTitle, yearsExperience, yearsWithCompany, age, gender, additionalInfo) VALUES (1, 'Software Engineer', 5, 3, 30, 'Male', 'Expert in Java and Python'), (2, 'Project Manager', 8, 5, 35, 'Male', 'Certified PMP, skilled in Agile methodologies'), (3, 'UX Designer', 4, 2, 28, 'Female', 'Specializes in user interface design and user experience');
 ```
+
+With that, you have the backend setup for the Bryntum Scheduler.
