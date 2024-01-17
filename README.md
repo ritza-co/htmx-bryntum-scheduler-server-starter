@@ -168,3 +168,5 @@ Add some example resource details data to the table:
 ```sql
 INSERT INTO resource_details (resourceId, jobTitle, yearsExperience, yearsWithCompany, age, gender, additionalInfo) VALUES (1, 'Software Engineer', 5, 3, 30, 'Male', 'Expert in Java and Python'), (2, 'Project Manager', 8, 5, 35, 'Male', 'Certified PMP, skilled in Agile methodologies'), (3, 'UX Designer', 4, 2, 28, 'Female', 'Specializes in user interface design and user experience');
 ```
+
+With that, you have the backend setup for the Bryntum Scheduler.
